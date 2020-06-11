@@ -1,0 +1,361 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ACA50DCC2491E11F00914EAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA50DCB2491E11F00914EAF /* AppDelegate.swift */; };
+		ACA50DCE2491E11F00914EAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA50DCD2491E11F00914EAF /* ViewController.swift */; };
+		ACA50DD02491E12100914EAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACA50DCF2491E12100914EAF /* Assets.xcassets */; };
+		ACA50DD32491E12100914EAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACA50DD12491E12100914EAF /* Main.storyboard */; };
+		ACA50E1B2492127500914EAF /* PPGAppKit in Frameworks */ = {isa = PBXBuildFile; productRef = ACA50E1A2492127500914EAF /* PPGAppKit */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		ACA50DC82491E11F00914EAF /* PayProGlobalStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayProGlobalStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACA50DCB2491E11F00914EAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ACA50DCD2491E11F00914EAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ACA50DCF2491E12100914EAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ACA50DD22491E12100914EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ACA50DD42491E12100914EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACA50DD52491E12100914EAF /* PayProGlobalStore.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PayProGlobalStore.entitlements; sourceTree = "<group>"; };
+		ACA50E182491F18E00914EAF /* PPGAppKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PPGAppKit; sourceTree = "<group>"; };
+		ACA50E1C2492130000914EAF /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ACA50DC52491E11F00914EAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACA50E1B2492127500914EAF /* PPGAppKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ACA50DBF2491E11F00914EAF = {
+			isa = PBXGroup;
+			children = (
+				ACA50DF92491F0F800914EAF /* SDK */,
+				ACA50DCA2491E11F00914EAF /* PayProGlobalStore */,
+				ACA50DC92491E11F00914EAF /* Products */,
+				ACA50E192492127500914EAF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		ACA50DC92491E11F00914EAF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ACA50DC82491E11F00914EAF /* PayProGlobalStore.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ACA50DCA2491E11F00914EAF /* PayProGlobalStore */ = {
+			isa = PBXGroup;
+			children = (
+				ACA50DCB2491E11F00914EAF /* AppDelegate.swift */,
+				ACA50DCD2491E11F00914EAF /* ViewController.swift */,
+				ACA50DCF2491E12100914EAF /* Assets.xcassets */,
+				ACA50DD12491E12100914EAF /* Main.storyboard */,
+				ACA50DD42491E12100914EAF /* Info.plist */,
+				ACA50DD52491E12100914EAF /* PayProGlobalStore.entitlements */,
+				ACA50E1C2492130000914EAF /* BackgroundView.swift */,
+			);
+			path = PayProGlobalStore;
+			sourceTree = "<group>";
+		};
+		ACA50DF92491F0F800914EAF /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				ACA50E182491F18E00914EAF /* PPGAppKit */,
+			);
+			name = SDK;
+			path = ../../SDK;
+			sourceTree = "<group>";
+		};
+		ACA50E192492127500914EAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ACA50DC72491E11F00914EAF /* PayProGlobalStore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACA50DD82491E12100914EAF /* Build configuration list for PBXNativeTarget "PayProGlobalStore" */;
+			buildPhases = (
+				ACA50DC42491E11F00914EAF /* Sources */,
+				ACA50DC52491E11F00914EAF /* Frameworks */,
+				ACA50DC62491E11F00914EAF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PayProGlobalStore;
+			packageProductDependencies = (
+				ACA50E1A2492127500914EAF /* PPGAppKit */,
+			);
+			productName = PayProGlobalStore;
+			productReference = ACA50DC82491E11F00914EAF /* PayProGlobalStore.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ACA50DC02491E11F00914EAF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "PayPro Global Inc";
+				TargetAttributes = {
+					ACA50DC72491E11F00914EAF = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = ACA50DC32491E11F00914EAF /* Build configuration list for PBXProject "PayProGlobalStore" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ACA50DBF2491E11F00914EAF;
+			productRefGroup = ACA50DC92491E11F00914EAF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ACA50DC72491E11F00914EAF /* PayProGlobalStore */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ACA50DC62491E11F00914EAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACA50DD02491E12100914EAF /* Assets.xcassets in Resources */,
+				ACA50DD32491E12100914EAF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ACA50DC42491E11F00914EAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACA50DCE2491E11F00914EAF /* ViewController.swift in Sources */,
+				ACA50DCC2491E11F00914EAF /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		ACA50DD12491E12100914EAF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ACA50DD22491E12100914EAF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ACA50DD62491E12100914EAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ACA50DD72491E12100914EAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		ACA50DD92491E12100914EAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PayProGlobalStore/PayProGlobalStore.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PayProGlobalStore/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = payproglobal.PayProGlobalStore;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		ACA50DDA2491E12100914EAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PayProGlobalStore/PayProGlobalStore.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PayProGlobalStore/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = payproglobal.PayProGlobalStore;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ACA50DC32491E11F00914EAF /* Build configuration list for PBXProject "PayProGlobalStore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACA50DD62491E12100914EAF /* Debug */,
+				ACA50DD72491E12100914EAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACA50DD82491E12100914EAF /* Build configuration list for PBXNativeTarget "PayProGlobalStore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACA50DD92491E12100914EAF /* Debug */,
+				ACA50DDA2491E12100914EAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ACA50E1A2492127500914EAF /* PPGAppKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PPGAppKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = ACA50DC02491E11F00914EAF /* Project object */;
+}

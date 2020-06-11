@@ -7,24 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ACA50DCC2491E11F00914EAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA50DCB2491E11F00914EAF /* AppDelegate.swift */; };
-		ACA50DCE2491E11F00914EAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA50DCD2491E11F00914EAF /* ViewController.swift */; };
-		ACA50DD02491E12100914EAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACA50DCF2491E12100914EAF /* Assets.xcassets */; };
-		ACA50DD32491E12100914EAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACA50DD12491E12100914EAF /* Main.storyboard */; };
+		ACA50E2C249253B000914EAF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA50E2B249253B000914EAF /* AppDelegate.m */; };
+		ACA50E2F249253B000914EAF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA50E2E249253B000914EAF /* ViewController.m */; };
+		ACA50E31249253B200914EAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACA50E30249253B200914EAF /* Assets.xcassets */; };
+		ACA50E34249253B200914EAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACA50E32249253B200914EAF /* Main.storyboard */; };
+		ACA50E37249253B200914EAF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA50E36249253B200914EAF /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		ACA50DC82491E11F00914EAF /* PayProGlobalStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayProGlobalStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACA50DCB2491E11F00914EAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ACA50DCD2491E11F00914EAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		ACA50DCF2491E12100914EAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		ACA50DD22491E12100914EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		ACA50DD42491E12100914EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ACA50DD52491E12100914EAF /* PayProGlobalStore.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PayProGlobalStore.entitlements; sourceTree = "<group>"; };
+		ACA50E27249253B000914EAF /* PayProGlobalStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayProGlobalStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACA50E2A249253B000914EAF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		ACA50E2B249253B000914EAF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		ACA50E2D249253B000914EAF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		ACA50E2E249253B000914EAF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		ACA50E30249253B200914EAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ACA50E33249253B200914EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ACA50E35249253B200914EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACA50E36249253B200914EAF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ACA50E38249253B200914EAF /* PayProGlobalStore.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PayProGlobalStore.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		ACA50DC52491E11F00914EAF /* Frameworks */ = {
+		ACA50E24249253B000914EAF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -34,31 +38,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		ACA50DBF2491E11F00914EAF = {
+		ACA50E1E249253B000914EAF = {
 			isa = PBXGroup;
 			children = (
-				ACA50DCA2491E11F00914EAF /* PayProGlobalStore */,
-				ACA50DC92491E11F00914EAF /* Products */,
+				ACA50E29249253B000914EAF /* PayProGlobalStore */,
+				ACA50E28249253B000914EAF /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		ACA50DC92491E11F00914EAF /* Products */ = {
+		ACA50E28249253B000914EAF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ACA50DC82491E11F00914EAF /* PayProGlobalStore.app */,
+				ACA50E27249253B000914EAF /* PayProGlobalStore.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		ACA50DCA2491E11F00914EAF /* PayProGlobalStore */ = {
+		ACA50E29249253B000914EAF /* PayProGlobalStore */ = {
 			isa = PBXGroup;
 			children = (
-				ACA50DCB2491E11F00914EAF /* AppDelegate.swift */,
-				ACA50DCD2491E11F00914EAF /* ViewController.swift */,
-				ACA50DCF2491E12100914EAF /* Assets.xcassets */,
-				ACA50DD12491E12100914EAF /* Main.storyboard */,
-				ACA50DD42491E12100914EAF /* Info.plist */,
-				ACA50DD52491E12100914EAF /* PayProGlobalStore.entitlements */,
+				ACA50E2A249253B000914EAF /* AppDelegate.h */,
+				ACA50E2B249253B000914EAF /* AppDelegate.m */,
+				ACA50E2D249253B000914EAF /* ViewController.h */,
+				ACA50E2E249253B000914EAF /* ViewController.m */,
+				ACA50E30249253B200914EAF /* Assets.xcassets */,
+				ACA50E32249253B200914EAF /* Main.storyboard */,
+				ACA50E35249253B200914EAF /* Info.plist */,
+				ACA50E36249253B200914EAF /* main.m */,
+				ACA50E38249253B200914EAF /* PayProGlobalStore.entitlements */,
 			);
 			path = PayProGlobalStore;
 			sourceTree = "<group>";
@@ -66,13 +73,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		ACA50DC72491E11F00914EAF /* PayProGlobalStore */ = {
+		ACA50E26249253B000914EAF /* PayProGlobalStore */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ACA50DD82491E12100914EAF /* Build configuration list for PBXNativeTarget "PayProGlobalStore" */;
+			buildConfigurationList = ACA50E3B249253B200914EAF /* Build configuration list for PBXNativeTarget "PayProGlobalStore" */;
 			buildPhases = (
-				ACA50DC42491E11F00914EAF /* Sources */,
-				ACA50DC52491E11F00914EAF /* Frameworks */,
-				ACA50DC62491E11F00914EAF /* Resources */,
+				ACA50E23249253B000914EAF /* Sources */,
+				ACA50E24249253B000914EAF /* Frameworks */,
+				ACA50E25249253B000914EAF /* Resources */,
 			);
 			buildRules = (
 			);
@@ -80,25 +87,24 @@
 			);
 			name = PayProGlobalStore;
 			productName = PayProGlobalStore;
-			productReference = ACA50DC82491E11F00914EAF /* PayProGlobalStore.app */;
+			productReference = ACA50E27249253B000914EAF /* PayProGlobalStore.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		ACA50DC02491E11F00914EAF /* Project object */ = {
+		ACA50E1F249253B000914EAF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "PayPro Global Inc";
 				TargetAttributes = {
-					ACA50DC72491E11F00914EAF = {
+					ACA50E26249253B000914EAF = {
 						CreatedOnToolsVersion = 11.5;
 					};
 				};
 			};
-			buildConfigurationList = ACA50DC32491E11F00914EAF /* Build configuration list for PBXProject "PayProGlobalStore" */;
+			buildConfigurationList = ACA50E22249253B000914EAF /* Build configuration list for PBXProject "PayProGlobalStore" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -106,45 +112,46 @@
 				en,
 				Base,
 			);
-			mainGroup = ACA50DBF2491E11F00914EAF;
-			productRefGroup = ACA50DC92491E11F00914EAF /* Products */;
+			mainGroup = ACA50E1E249253B000914EAF;
+			productRefGroup = ACA50E28249253B000914EAF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				ACA50DC72491E11F00914EAF /* PayProGlobalStore */,
+				ACA50E26249253B000914EAF /* PayProGlobalStore */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		ACA50DC62491E11F00914EAF /* Resources */ = {
+		ACA50E25249253B000914EAF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACA50DD02491E12100914EAF /* Assets.xcassets in Resources */,
-				ACA50DD32491E12100914EAF /* Main.storyboard in Resources */,
+				ACA50E31249253B200914EAF /* Assets.xcassets in Resources */,
+				ACA50E34249253B200914EAF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		ACA50DC42491E11F00914EAF /* Sources */ = {
+		ACA50E23249253B000914EAF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACA50DCE2491E11F00914EAF /* ViewController.swift in Sources */,
-				ACA50DCC2491E11F00914EAF /* AppDelegate.swift in Sources */,
+				ACA50E2F249253B000914EAF /* ViewController.m in Sources */,
+				ACA50E37249253B200914EAF /* main.m in Sources */,
+				ACA50E2C249253B000914EAF /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		ACA50DD12491E12100914EAF /* Main.storyboard */ = {
+		ACA50E32249253B200914EAF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				ACA50DD22491E12100914EAF /* Base */,
+				ACA50E33249253B200914EAF /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -152,7 +159,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		ACA50DD62491E12100914EAF /* Debug */ = {
+		ACA50E39249253B200914EAF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -207,12 +214,10 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		ACA50DD72491E12100914EAF /* Release */ = {
+		ACA50E3A249253B200914EAF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -260,12 +265,10 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};
-		ACA50DD92491E12100914EAF /* Debug */ = {
+		ACA50E3C249253B200914EAF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -279,11 +282,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = payproglobal.PayProGlobalStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		ACA50DDA2491E12100914EAF /* Release */ = {
+		ACA50E3D249253B200914EAF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -297,32 +299,31 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = payproglobal.PayProGlobalStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		ACA50DC32491E11F00914EAF /* Build configuration list for PBXProject "PayProGlobalStore" */ = {
+		ACA50E22249253B000914EAF /* Build configuration list for PBXProject "PayProGlobalStore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ACA50DD62491E12100914EAF /* Debug */,
-				ACA50DD72491E12100914EAF /* Release */,
+				ACA50E39249253B200914EAF /* Debug */,
+				ACA50E3A249253B200914EAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ACA50DD82491E12100914EAF /* Build configuration list for PBXNativeTarget "PayProGlobalStore" */ = {
+		ACA50E3B249253B200914EAF /* Build configuration list for PBXNativeTarget "PayProGlobalStore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ACA50DD92491E12100914EAF /* Debug */,
-				ACA50DDA2491E12100914EAF /* Release */,
+				ACA50E3C249253B200914EAF /* Debug */,
+				ACA50E3D249253B200914EAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = ACA50DC02491E11F00914EAF /* Project object */;
+	rootObject = ACA50E1F249253B000914EAF /* Project object */;
 }

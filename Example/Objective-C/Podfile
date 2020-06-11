@@ -1,0 +1,7 @@
+
+target 'PayProGlobalStore' do
+  use_frameworks!
+
+  pod 'PPGAppKit', :path => '../../SDK/PPGAppKit' # point to github once we have a public rep
+
+end
