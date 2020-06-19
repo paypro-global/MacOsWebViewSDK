@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "PayProGlobalStore-Swift.h"
 @import PPGAppKit;
 
 @implementation ViewController
@@ -29,14 +29,44 @@
         NSLog(@"Did Finish");
     };
     
-    self.payproGlobal.didFail = ^(NSError * error) {
+    self.payproGlobal.didFail  = ^(NSError * error) {
         NSLog(@"Did Fail");
+    };
+    __weak ViewController *weakSelf = self;
+
+    self.payproGlobal.urlCredential = ^(void (^ callback)(NSURLCredential * _Nullable)) {
+        [weakSelf showAlert:callback];
     };
     
     NSView *paymentView = [self.payproGlobal paymentView];
     [paymentView setTranslatesAutoresizingMaskIntoConstraints:false];
     [self.container addSubview:paymentView];
     [self.container addConstraints:[self paymentViewConstraints]];
+}
+
+- (void)showAlert:(void (^ )(NSURLCredential * _Nullable))callback {
+    self.authenticationAlert = [[AuthenticationAlert alloc] init];
+    __weak ViewController *weakSelf = self;
+    
+    self.authenticationAlert.didSignin = ^(Credential * credential) {
+        callback([[NSURLCredential alloc] initWithUser:[credential username] password:[credential password] persistence:NSURLCredentialPersistenceForSession]);
+        [weakSelf removeAuthenticationAlert];
+    };
+    
+    self.authenticationAlert.didCancel = ^{
+        callback(nil);
+        [weakSelf removeAuthenticationAlert];
+    };
+    
+    NSString *host = [[self.payproGlobal url] host];
+    [self.authenticationAlert showWindow:self];
+    [[self.authenticationAlert url] setStringValue:host];
+
+}
+
+- (void)removeAuthenticationAlert{
+    [[self.authenticationAlert window] orderOut:self];
+    self.authenticationAlert = nil;
 }
 
 - (NSArray*)paymentViewConstraints{

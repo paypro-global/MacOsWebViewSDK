@@ -8,18 +8,27 @@
 
 import Cocoa
 
-struct Credential {
-    let username:String
-    let password:String
+@objc
+class Credential : NSObject {
+    @objc
+    public let username:String
+    @objc
+    public let password:String
+    init(username:String,password:String) {
+        self.username = username
+        self.password = password
+    }
 }
 
 class AuthenticationAlert: NSWindowController {
     @IBOutlet weak var username: NSTextField!
     @IBOutlet weak var password: NSSecureTextField!
     @IBOutlet weak var url: NSTextField!
-    
-    var didSignin : ((Credential) -> ())?
-    var didCancel : (()->())?
+   
+    @objc
+    public var didSignin : ((Credential) -> ())?
+    @objc
+    public var didCancel : (()->())?
     
     override func windowDidLoad() {
         print("did load")

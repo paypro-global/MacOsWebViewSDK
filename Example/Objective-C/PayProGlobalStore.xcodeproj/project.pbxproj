@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC19AE2A249C98C700E91F5F /* AuthenticationAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC19AE29249C98C700E91F5F /* AuthenticationAlert.swift */; };
+		AC19AE2C249CA37A00E91F5F /* AuthenticationAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC19AE2B249CA37A00E91F5F /* AuthenticationAlert.xib */; };
 		ACA50E2C249253B000914EAF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA50E2B249253B000914EAF /* AppDelegate.m */; };
 		ACA50E2F249253B000914EAF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA50E2E249253B000914EAF /* ViewController.m */; };
 		ACA50E31249253B200914EAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACA50E30249253B200914EAF /* Assets.xcassets */; };
@@ -15,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC19AE28249C98C600E91F5F /* PayProGlobalStore-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PayProGlobalStore-Bridging-Header.h"; sourceTree = "<group>"; };
+		AC19AE29249C98C700E91F5F /* AuthenticationAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationAlert.swift; path = ../../Swift/PayProGlobalStore/AuthenticationAlert.swift; sourceTree = "<group>"; };
+		AC19AE2B249CA37A00E91F5F /* AuthenticationAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AuthenticationAlert.xib; path = ../../Swift/PayProGlobalStore/AuthenticationAlert.xib; sourceTree = "<group>"; };
 		ACA50E27249253B000914EAF /* PayProGlobalStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayProGlobalStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA50E2A249253B000914EAF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		ACA50E2B249253B000914EAF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -38,11 +43,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B2B2C4BFFFEF21F70BF5E34 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		ACA50E1E249253B000914EAF = {
 			isa = PBXGroup;
 			children = (
 				ACA50E29249253B000914EAF /* PayProGlobalStore */,
 				ACA50E28249253B000914EAF /* Products */,
+				4B2B2C4BFFFEF21F70BF5E34 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,6 +70,8 @@
 		ACA50E29249253B000914EAF /* PayProGlobalStore */ = {
 			isa = PBXGroup;
 			children = (
+				AC19AE29249C98C700E91F5F /* AuthenticationAlert.swift */,
+				AC19AE2B249CA37A00E91F5F /* AuthenticationAlert.xib */,
 				ACA50E2A249253B000914EAF /* AppDelegate.h */,
 				ACA50E2B249253B000914EAF /* AppDelegate.m */,
 				ACA50E2D249253B000914EAF /* ViewController.h */,
@@ -66,6 +81,7 @@
 				ACA50E35249253B200914EAF /* Info.plist */,
 				ACA50E36249253B200914EAF /* main.m */,
 				ACA50E38249253B200914EAF /* PayProGlobalStore.entitlements */,
+				AC19AE28249C98C600E91F5F /* PayProGlobalStore-Bridging-Header.h */,
 			);
 			path = PayProGlobalStore;
 			sourceTree = "<group>";
@@ -101,6 +117,7 @@
 				TargetAttributes = {
 					ACA50E26249253B000914EAF = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
@@ -127,6 +144,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC19AE2C249CA37A00E91F5F /* AuthenticationAlert.xib in Resources */,
 				ACA50E31249253B200914EAF /* Assets.xcassets in Resources */,
 				ACA50E34249253B200914EAF /* Main.storyboard in Resources */,
 			);
@@ -139,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC19AE2A249C98C700E91F5F /* AuthenticationAlert.swift in Sources */,
 				ACA50E2F249253B000914EAF /* ViewController.m in Sources */,
 				ACA50E37249253B200914EAF /* main.m in Sources */,
 				ACA50E2C249253B000914EAF /* AppDelegate.m in Sources */,
@@ -272,9 +291,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PayProGlobalStore/PayProGlobalStore.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = PayProGlobalStore/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -282,6 +303,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = payproglobal.PayProGlobalStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PayProGlobalStore/PayProGlobalStore-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -289,9 +313,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PayProGlobalStore/PayProGlobalStore.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = PayProGlobalStore/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -299,6 +325,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = payproglobal.PayProGlobalStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PayProGlobalStore/PayProGlobalStore-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

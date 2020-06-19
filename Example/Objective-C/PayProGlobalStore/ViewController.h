@@ -8,11 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 @import PPGAppKit;
+#import "PayProGlobalStore-Swift.h"
 
 @interface ViewController : NSViewController
 
 @property (strong) id<PayProGlobal> payproGlobal;
 @property (weak) IBOutlet NSView *container;
+@property (strong) AuthenticationAlert *authenticationAlert;
 
 @end
 

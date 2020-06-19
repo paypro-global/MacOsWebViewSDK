@@ -14,7 +14,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var container: NSView!
     private var authenticationAlert: AuthenticationAlert?
     private lazy var payproGlobal: PayProGlobal = {
-        return PPGAppKit.create(configuration: Configuration(url: "https://httpbin.org/basic-auth/user/passwd"))
+        return PPGAppKit.create(configuration: Configuration(url: "https://store.payproglobal.com/checkout?products[1][id]=59421&use-test-mode=true&secret-key=gEcP!-xp9M"))
     }()
     
     private var paymentViewConstraints:[NSLayoutConstraint]  {
