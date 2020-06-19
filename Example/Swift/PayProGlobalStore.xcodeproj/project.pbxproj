@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC5EBF7B249C6F74007059E5 /* AuthenticationAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EBF79249C6F74007059E5 /* AuthenticationAlert.swift */; };
+		AC5EBF7C249C6F74007059E5 /* AuthenticationAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC5EBF7A249C6F74007059E5 /* AuthenticationAlert.xib */; };
 		ACA50DCC2491E11F00914EAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA50DCB2491E11F00914EAF /* AppDelegate.swift */; };
 		ACA50DCE2491E11F00914EAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA50DCD2491E11F00914EAF /* ViewController.swift */; };
 		ACA50DD02491E12100914EAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACA50DCF2491E12100914EAF /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC5EBF79249C6F74007059E5 /* AuthenticationAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationAlert.swift; sourceTree = "<group>"; };
+		AC5EBF7A249C6F74007059E5 /* AuthenticationAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthenticationAlert.xib; sourceTree = "<group>"; };
 		ACA50DC82491E11F00914EAF /* PayProGlobalStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayProGlobalStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA50DCB2491E11F00914EAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACA50DCD2491E11F00914EAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 				ACA50DD42491E12100914EAF /* Info.plist */,
 				ACA50DD52491E12100914EAF /* PayProGlobalStore.entitlements */,
 				ACA50E1C2492130000914EAF /* BackgroundView.swift */,
+				AC5EBF79249C6F74007059E5 /* AuthenticationAlert.swift */,
+				AC5EBF7A249C6F74007059E5 /* AuthenticationAlert.xib */,
 			);
 			path = PayProGlobalStore;
 			sourceTree = "<group>";
@@ -147,6 +153,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC5EBF7C249C6F74007059E5 /* AuthenticationAlert.xib in Resources */,
 				ACA50DD02491E12100914EAF /* Assets.xcassets in Resources */,
 				ACA50DD32491E12100914EAF /* Main.storyboard in Resources */,
 			);
@@ -160,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACA50DCE2491E11F00914EAF /* ViewController.swift in Sources */,
+				AC5EBF7B249C6F74007059E5 /* AuthenticationAlert.swift in Sources */,
 				ACA50DCC2491E11F00914EAF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

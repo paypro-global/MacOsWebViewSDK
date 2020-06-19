@@ -43,6 +43,10 @@ internal class PayProWebView : NSObject{
     var didStartPaymentViewLoad:(()->())?
     
     var didFinishPaymentViewLoad:(()->())?
+   
+    var urlCredential: ((@escaping URLCredentialCallback) -> ())?
+    
+    private var authenticationChallenge:((URLSession.AuthChallengeDisposition, URLCredential?) -> Void)?
 
     init(configuration:Configuration) {
         self.configuration = configuration
@@ -67,14 +71,41 @@ internal class PayProWebView : NSObject{
 }
 
 extension PayProWebView  : WKNavigationDelegate {
+    
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         print("didFailProvisionalNavigation \(error)")
         didFail?(error)
         refreshProgress()
     }
     
+    func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void){
+        handleAuthentication(with: completionHandler,challenge:challenge)
+    }
+    
+    private func handleAuthentication(with handler:@escaping(URLSession.AuthChallengeDisposition, URLCredential?)->Void,challenge:URLAuthenticationChallenge){
+        switch challenge.protectionSpace.authenticationMethod {
+            case NSURLAuthenticationMethodDefault,NSURLAuthenticationMethodHTTPDigest,NSURLAuthenticationMethodHTTPBasic:
+                authenticationChallenge = handler
+                urlCredential?(credential)
+            default:
+                handler(.performDefaultHandling,nil)
+        }
+    }
+    
+    private func credential(credential:URLCredential?) {
+        defer {
+            authenticationChallenge = nil
+        }
+        
+        guard let validCredential = credential else {
+            authenticationChallenge?(.cancelAuthenticationChallenge,nil)
+            return
+        }
+        
+        authenticationChallenge?(.useCredential,validCredential)
+    }
+    
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        print("didErrror \(error)")
         didFail?(error)
         refreshProgress()
     }
@@ -91,6 +122,10 @@ extension PayProWebView  : WKNavigationDelegate {
 }
 
 extension PayProWebView : PayProGlobal {
+    var url: URL? {
+        webView.url
+    }
+    
     var paymentView: View {
         webView
     }

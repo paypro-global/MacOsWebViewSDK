@@ -11,14 +11,18 @@ import WebKit
 
 public typealias View = NSView
 public typealias ErrorCallback = (Error) -> ()
+public typealias URLCredentialCallback = (URLCredential?)->()
+
 
 @objc
 public protocol PayProGlobal {
+    var url : URL? { get }
     var paymentView : View { get }
     func reload()
     var didFail: ErrorCallback? { get set }
     var didStartPaymentViewLoad:(()->())?{ get set}
     var didFinishPaymentViewLoad:(()->())?{ get set}
+    var urlCredential:((@escaping URLCredentialCallback)->())? { get set}
 }
 
 @objc

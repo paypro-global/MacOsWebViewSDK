@@ -12,9 +12,9 @@ import PPGAppKit
 class ViewController: NSViewController {
 
     @IBOutlet weak var container: NSView!
-    
-    lazy var payproGlobal: PayProGlobal = {
-        return PPGAppKit.create(configuration: Configuration(url: "https://store.payproglobal.com/checkout?products[1][id]=59421&use-test-mode=true&secret-key=gEcP!-xp9M"))
+    private var authenticationAlert: AuthenticationAlert?
+    private lazy var payproGlobal: PayProGlobal = {
+        return PPGAppKit.create(configuration: Configuration(url: "https://httpbin.org/basic-auth/user/passwd"))
     }()
     
     private var paymentViewConstraints:[NSLayoutConstraint]  {
@@ -46,14 +46,46 @@ class ViewController: NSViewController {
             print("didFinishPaymentViewLoad ")
         }
         
+        payproGlobal.urlCredential = { [weak self] (crediential) in
+            self?.showAuthenticationUI(with: crediential)
+        }
+        
         paymentView.translatesAutoresizingMaskIntoConstraints = false
         container.addConstraints(paymentViewConstraints)
         container.addSubview(paymentView)
+    }
+    
+    private func showAuthenticationUI(with  callback:@escaping(URLCredentialCallback)){
+        authenticationAlert = AuthenticationAlert()
+        
+        authenticationAlert?.didSignin = { [weak self] (credential) in
+            callback(URLCredential(user: credential.username, password: credential.password, persistence: .forSession))
+            self?.removeAuthenticationAlert()
+        }
+        
+        authenticationAlert?.didCancel = { [weak self] in
+            callback(nil)
+            self?.removeAuthenticationAlert()
+        }
+        
+        authenticationAlert?.showWindow(self)
+        authenticationAlert?.url.stringValue = payproGlobal.url?.host ?? String.empty
+    }
+    
+    private func removeAuthenticationAlert(){
+        authenticationAlert?.window?.orderOut(self)
+        authenticationAlert = nil
     }
 
     @IBAction func reload(_ sender: Any) {
         payproGlobal.reload()
     }
     
+}
+
+extension String {
+    static var empty: String {
+        return ""
+    }
 }
 
