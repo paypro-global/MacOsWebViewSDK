@@ -1,0 +1,151 @@
+# Introduction #
+
+[PayPro Global Inc](https://payproglobal.com) offers the best shopping experience through a complex payment processing system which delivers secure transactions, versatility (multiple options to satisfy all customer preferences), user friendly experience (localized content, payment methods and currencies) and the highest degree of transaction fulfillment.
+
+PPGAppKit is PayPro Global's SDK  which enables quick integration of our shopping expereince in a Mac App.
+This SDK is a thin layer over  Webview which enables integration of PayProGlobal e-commerce solution in Mac App.
+
+To get an idea of how it works, the SDK provides a Swift and Objective-C examples. All source code is released under the MIT license. It is open to contributions and its use is unrestricted. 
+
+
+# PPGAppKit #
+
+PayProGlobalStore consists of two primiary components `PayProWebView` and  `Configuration`.
+
+The `PayProWebView` provides funtionality to load the e-commerce solution of PayPro Global. `PayProWebView` is initialized with  `Configuration`  object and embedded within the Mac App. [This]( https://payproglobal.com/knowledge-base/developer-tools/url-parameters/) document provides details about how to construct a URL which is provided  to `Configuration`  object.
+
+## Requirements
+
+* Xcode 11.x
+* Swift 5.x
+* Objective-C 2.0
+
+## Installation##
+[TODO : This can be done once the Repostory is public]
+
+### [CocoaPods](https://guides.cocoapods.org/using/using-cocoapods.html)
+
+```ruby
+# Podfile
+use_frameworks!
+
+target 'YOUR_TARGET_NAME' do
+    pod 'PPGAppKit'
+end
+
+```
+
+Replace `YOUR_TARGET_NAME` and then, in the `Podfile` directory, type:
+
+```bash
+$ pod install
+```
+
+If you don't have CocoaPods installed,  it can be install using following command:
+
+```bash
+$ sudo gem install cocoapods
+```
+### [Swift Package Manager](https://github.com/apple/swift-package-manager)
+
+Create a `Package.swift` file.
+
+[TODO : Swift Package Installation instructions]
+
+
+## How-to use PPGAppKit in Swift##
+
+1. Read our [URL Parmaeters guide](https://support.fastspring.com/entries/234307-embedded-web-store-sdk) to learn how about URL parmeters.
+2. Create `Configuration` object using the URL parameters explained in Step 1.
+3. Create  `PayProGlobal` initialized with `Configuration` object. 
+4. Observe  `didFail/didStartPaymentViewLoad/didFinishPaymentViewLoad` to track progress of URL Load.
+5. Observe `urlCredential`  method to handle Authentication Challenge.
+6. Access `paymentView` object in `PayProGlobal` and add it as a subview on any NSWindow.
+
+Example located in Example/Swift folder show  how to create  `PayProGlobal` and use it in detail.
+Open `PayProGlobalStore.xcodeproj`, build and run.
+
+### Code snippet ###
+        private lazy var payproGlobal: PayProGlobal = {
+           let configuration = Configuration(url: "https://store.payproglobal.com/checkout?products[1][id]=59421&use-test-mode=true&secret-key=gEcP!-xp9M")
+           return PPGAppKit.create(configuration: configuration)
+        }()
+               
+        private func load(){
+           let paymentView = payproGlobal.paymentView
+
+           payproGlobal.didFail = { (error) in
+               print("Did Fail \(error)")
+           }
+           
+           payproGlobal.didStartPaymentViewLoad = {
+               print("didStartPaymentViewLoad ")
+           }
+           
+           payproGlobal.didFinishPaymentViewLoad = {
+               print("didFinishPaymentViewLoad ")
+           }
+           
+           payproGlobal.urlCredential = { [weak self] (crediential) in
+               self?.showAuthenticationUI(with: crediential)
+           }
+           
+           paymentView.translatesAutoresizingMaskIntoConstraints = false
+           container.addConstraints(paymentViewConstraints)
+           container.addSubview(paymentView)
+        }
+
+
+## How-to use PPGAppKit in Objective-C##
+
+1. Read our [URL Parmaeters guide](https://support.fastspring.com/entries/234307-embedded-web-store-sdk) to learn how about URL parmeters.
+2. Create `Configuration` object using 
+3. Create  `PayProGlobal` initialized with `Configuration` object. Examples located in Example/Swift and Example/Objective-C are showing how to create  `PayProGlobal` and use it in detail.
+4. Observe  `didFail/didStartPaymentViewLoad/didFinishPaymentViewLoad` to track progress of URL Load.
+5. Observe `urlCredential`  method to handle Authentication Challenge.
+6. Access `paymentView` object in `PayProGlobal` and add it as a subview on any NSWindow.
+
+Example located in Example/Objectice-C folder show  how to create  `PayProGlobal` and use it in detail.
+
+Run following command to  create a XcodeWorkspace using CocoaPods:
+
+```bash
+$ cd [../Example/Objective-C]
+$ pod install
+```
+
+If you don't have CocoaPods installed,  it can be install using following command:
+
+```bash
+$ sudo gem install cocoapods
+```
+
+Open `PayProGlobalStore.xcworkspace` , build and run it.
+
+### Example ###
+
+    Configuration *configuration = [[Configuration alloc] initWithUrl:@"https://store.payproglobal.com/checkout?products[1][id]=59421&use-test-mode=true&secret-key=gEcP!-xp9M"];
+    self.payproGlobal = [PPGAppKit createWithConfiguration:configuration];
+
+    self.payproGlobal.didStartPaymentViewLoad = ^(){
+       NSLog(@"Did start");
+    };
+
+    self.payproGlobal.didFinishPaymentViewLoad = ^(){
+       NSLog(@"Did Finish");
+    };
+
+    self.payproGlobal.didFail  = ^(NSError * error) {
+       NSLog(@"Did Fail");
+    };
+    __weak ViewController *weakSelf = self;
+
+    self.payproGlobal.urlCredential = ^(void (^ callback)(NSURLCredential * _Nullable)) {
+       [weakSelf showAlert:callback];
+    };
+
+    NSView *paymentView = [self.payproGlobal paymentView];
+    [paymentView setTranslatesAutoresizingMaskIntoConstraints:false];
+    [self.container addSubview:paymentView];
+
+
