@@ -10,7 +10,7 @@ To get an idea of how it works, the SDK provides a Swift and Objective-C example
 
 # PPGAppKit #
 
-PayProGlobalStore consists of two primiary components `PayProWebView` and  `Configuration`.
+PPGAppKit consists of two primiary components `PayProWebView` and  `Configuration`.
 
 The `PayProWebView` provides funtionality to load the e-commerce solution of PayPro Global. `PayProWebView` is initialized with  `Configuration`  object and embedded within the Mac App. [This]( https://payproglobal.com/knowledge-base/developer-tools/url-parameters/) document provides details about how to construct a URL which is provided  to `Configuration`  object.
 
