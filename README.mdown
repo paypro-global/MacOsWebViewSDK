@@ -53,7 +53,7 @@ Create a `Package.swift` file.
 [TODO : Swift Package Installation instructions]
 
 
-## How-to use PPGAppKit in Swift##
+## How-to use PPGAppKit in Swift ##
 
 1. Read our [URL Parmaeters guide](https://support.fastspring.com/entries/234307-embedded-web-store-sdk) to learn how about URL parmeters.
 2. Create `Configuration` object using the URL parameters explained in Step 1.
@@ -96,7 +96,7 @@ Open `PayProGlobalStore.xcodeproj`, build and run.
         }
 
 
-## How-to use PPGAppKit in Objective-C##
+## How-to use PPGAppKit in Objective-C ##
 
 1. Read our [URL Parmaeters guide](https://support.fastspring.com/entries/234307-embedded-web-store-sdk) to learn how about URL parmeters.
 2. Create `Configuration` object using 
