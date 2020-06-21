@@ -65,7 +65,7 @@ Create a `Package.swift` file.
 Example located in Example/Swift folder show  how to create  `PayProGlobal` and use it in detail.
 Open `PayProGlobalStore.xcodeproj`, build and run.
 
-### Code snippet ###
+### Example ###
         private lazy var payproGlobal: PayProGlobal = {
            let configuration = Configuration(url: "https://store.payproglobal.com/checkout?products[1][id]=59421&use-test-mode=true&secret-key=gEcP!-xp9M")
            return PPGAppKit.create(configuration: configuration)
