@@ -20,7 +20,9 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "PPGAppKit",
-            dependencies: []),
+            dependencies: [],
+            exclude: ["Example", "PPGAppKit.podspec", "README.md"]
+        ),
         .testTarget(
             name: "PPGAppKitTests",
             dependencies: ["PPGAppKit"]),
