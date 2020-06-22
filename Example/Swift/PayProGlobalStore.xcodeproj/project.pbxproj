@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,7 +13,6 @@
 		ACA50DCE2491E11F00914EAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA50DCD2491E11F00914EAF /* ViewController.swift */; };
 		ACA50DD02491E12100914EAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACA50DCF2491E12100914EAF /* Assets.xcassets */; };
 		ACA50DD32491E12100914EAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACA50DD12491E12100914EAF /* Main.storyboard */; };
-		ACA50E1B2492127500914EAF /* PPGAppKit in Frameworks */ = {isa = PBXBuildFile; productRef = ACA50E1A2492127500914EAF /* PPGAppKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,19 +33,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACA50E1B2492127500914EAF /* PPGAppKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E97F7967045296480422FDE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		ACA50DBF2491E11F00914EAF = {
 			isa = PBXGroup;
 			children = (
 				ACA50DCA2491E11F00914EAF /* PayProGlobalStore */,
 				ACA50DC92491E11F00914EAF /* Products */,
-				ACA50E192492127500914EAF /* Frameworks */,
+				3E97F7967045296480422FDE /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,13 +79,6 @@
 			path = PayProGlobalStore;
 			sourceTree = "<group>";
 		};
-		ACA50E192492127500914EAF /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -97,9 +95,6 @@
 			dependencies = (
 			);
 			name = PayProGlobalStore;
-			packageProductDependencies = (
-				ACA50E1A2492127500914EAF /* PPGAppKit */,
-			);
 			productName = PayProGlobalStore;
 			productReference = ACA50DC82491E11F00914EAF /* PayProGlobalStore.app */;
 			productType = "com.apple.product-type.application";
@@ -128,8 +123,6 @@
 				Base,
 			);
 			mainGroup = ACA50DBF2491E11F00914EAF;
-			packageReferences = (
-			);
 			productRefGroup = ACA50DC92491E11F00914EAF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -348,13 +341,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		ACA50E1A2492127500914EAF /* PPGAppKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = PPGAppKit;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ACA50DC02491E11F00914EAF /* Project object */;
 }
