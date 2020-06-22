@@ -61,7 +61,9 @@ To add a package dependency to your Xcode project, select File > Swift Packages 
 6. Access `paymentView` object in `PayProGlobal` and add it as a subview on any NSWindow.
 
 Example located in Example/Swift folder show  how to create  `PayProGlobal` and use it in detail.
-Open `PayProGlobalStore.xcodeproj`, build and run.
+Use Swift Package or CocoaPods as explained in Installtion Section.
+If you have used SwiftPackage, Open `PayProGlobalStore.xcodeproj`, build and run.
+If you have used CocoaPods, Open `PayProGlobalStore.xcworkspace`, build and run.
 
 ### Example ###
         private lazy var payproGlobal: PayProGlobal = {
