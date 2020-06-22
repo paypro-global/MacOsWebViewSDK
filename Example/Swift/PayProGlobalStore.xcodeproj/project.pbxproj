@@ -26,7 +26,6 @@
 		ACA50DD22491E12100914EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACA50DD42491E12100914EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACA50DD52491E12100914EAF /* PayProGlobalStore.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PayProGlobalStore.entitlements; sourceTree = "<group>"; };
-		ACA50E182491F18E00914EAF /* PPGAppKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PPGAppKit; sourceTree = "<group>"; };
 		ACA50E1C2492130000914EAF /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -45,7 +44,6 @@
 		ACA50DBF2491E11F00914EAF = {
 			isa = PBXGroup;
 			children = (
-				ACA50DF92491F0F800914EAF /* SDK */,
 				ACA50DCA2491E11F00914EAF /* PayProGlobalStore */,
 				ACA50DC92491E11F00914EAF /* Products */,
 				ACA50E192492127500914EAF /* Frameworks */,
@@ -74,15 +72,6 @@
 				AC5EBF7A249C6F74007059E5 /* AuthenticationAlert.xib */,
 			);
 			path = PayProGlobalStore;
-			sourceTree = "<group>";
-		};
-		ACA50DF92491F0F800914EAF /* SDK */ = {
-			isa = PBXGroup;
-			children = (
-				ACA50E182491F18E00914EAF /* PPGAppKit */,
-			);
-			name = SDK;
-			path = ../../SDK;
 			sourceTree = "<group>";
 		};
 		ACA50E192492127500914EAF /* Frameworks */ = {
@@ -139,6 +128,8 @@
 				Base,
 			);
 			mainGroup = ACA50DBF2491E11F00914EAF;
+			packageReferences = (
+			);
 			productRefGroup = ACA50DC92491E11F00914EAF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
