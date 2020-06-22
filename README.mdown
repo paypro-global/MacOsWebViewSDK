@@ -21,7 +21,7 @@ The `PayProWebView` provides funtionality to load the e-commerce solution of Pay
 * Objective-C 2.0
 
 ## Installation ##
-[TODO : This can be done once the Repostory is public]
+[TODO : Make the Repo public and push it to cocoapods]
 
 ### [CocoaPods](https://guides.cocoapods.org/using/using-cocoapods.html)
 
@@ -48,9 +48,7 @@ $ sudo gem install cocoapods
 ```
 ### [Swift Package Manager](https://github.com/apple/swift-package-manager)
 
-Create a `Package.swift` file.
-
-[TODO : Swift Package Installation instructions]
+To add a package dependency to your Xcode project, select File > Swift Packages > Add Package Dependency and enter its repository URL https://github.com/srinivas-codezyng/PayProGlobalStore.git
 
 
 ## How-to use PPGAppKit in Swift ##
