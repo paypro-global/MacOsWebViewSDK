@@ -53,7 +53,7 @@ To add a package dependency to your Xcode project, select File > Swift Packages 
 
 ## How-to use PPGAppKit in Swift ##
 
-1. Read our [URL Parmaeters guide](https://support.fastspring.com/entries/234307-embedded-web-store-sdk) to learn how about URL parmeters.
+1. Read our [URL Parmaeters guide](https://payproglobal.com/knowledge-base/developer-tools/url-parameters/) to learn how about URL parmeters.
 2. Create `Configuration` object using the URL parameters explained in Step 1.
 3. Create  `PayProGlobal` initialized with `Configuration` object. 
 4. Observe  `didFail/didStartPaymentViewLoad/didFinishPaymentViewLoad` to track progress of URL Load.
@@ -96,7 +96,7 @@ Open `PayProGlobalStore.xcodeproj`, build and run.
 
 ## How-to use PPGAppKit in Objective-C ##
 
-1. Read our [URL Parmaeters guide](https://support.fastspring.com/entries/234307-embedded-web-store-sdk) to learn how about URL parmeters.
+1. Read our [URL Parmaeters guide](https://payproglobal.com/knowledge-base/developer-tools/url-parameters/) to learn how about URL parmeters.
 2. Create `Configuration` object using 
 3. Create  `PayProGlobal` initialized with `Configuration` object. Examples located in Example/Swift and Example/Objective-C are showing how to create  `PayProGlobal` and use it in detail.
 4. Observe  `didFail/didStartPaymentViewLoad/didFinishPaymentViewLoad` to track progress of URL Load.
