@@ -47,6 +47,10 @@ class ViewController: NSViewController {
             print("didFinishPaymentViewLoad ")
         }
         
+        payproGlobal.didCompletedOrder = { (headers) in
+            print("\(headers)")
+        }
+        
         payproGlobal.urlCredential = { [weak self] (crediential) in
             self?.showAuthenticationUI(with: crediential)
         }

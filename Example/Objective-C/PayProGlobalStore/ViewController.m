@@ -32,6 +32,11 @@
     self.payproGlobal.didFail  = ^(NSError * error) {
         NSLog(@"Did Fail");
     };
+    
+    self.payproGlobal.didCompletedOrder = ^(NSDictionary<NSString *,id> * _Nullable headers) {
+        NSLog(@"%@",headers);
+    };
+    
     __weak ViewController *weakSelf = self;
 
     self.payproGlobal.urlCredential = ^(void (^ callback)(NSURLCredential * _Nullable)) {

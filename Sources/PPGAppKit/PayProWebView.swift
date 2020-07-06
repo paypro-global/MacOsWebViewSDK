@@ -23,7 +23,7 @@ internal class PayProWebView : NSObject{
         }
     }
     
-    private var invoiceHeaders:Dictionary<String,Any>?
+//    private var invoiceHeaders:Dictionary<String,Any>?
     
     lazy private var webView: WKWebView = {
           
@@ -70,7 +70,7 @@ internal class PayProWebView : NSObject{
     
     var didFinishPaymentViewLoad:(()->())?
     
-    var didCompletedOrder:((Dictionary<String, Any>)->())?
+    var didCompletedOrder:((Dictionary<String, Any>?)->())?
    
     var urlCredential: ((@escaping URLCredentialCallback) -> ())?
     
@@ -187,8 +187,8 @@ extension PayProWebView  : WKNavigationDelegate {
     }
     
     private func processHeaders(for navigationAction:WKNavigationAction){
-        if let validURL = navigationAction.request.url, validURL.path.contains(PayProWebView.payProPath.invoice) , invoiceHeaders == nil {
-            invoiceHeaders = navigationAction.request.allHTTPHeaderFields
+        if let validURL = navigationAction.request.url, validURL.path.contains(PayProWebView.payProPath.invoice) /*, invoiceHeaders == nil*/ {
+            didCompletedOrder?(navigationAction.request.allHTTPHeaderFields)
         }
     }
 
@@ -248,7 +248,7 @@ extension PayProWebView : PayProGlobal {
     
     func reload() {
         load()
-        invoiceHeaders = nil
+//        invoiceHeaders = nil
     }
 }
 
