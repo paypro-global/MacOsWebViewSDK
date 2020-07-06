@@ -9,5 +9,6 @@ Pod::Spec.new do |spec|
   spec.osx.deployment_target = "10.13"
   spec.source                = { :git => "https://github.com/srinivas-codezyng/PayProGlobalStore"}
   spec.source_files          = 'Sources/**/*.{h,swift}'
-  spec.swift_version 	     = '5.0'
+  spec.frameworks             = 'PDFKit'
+  spec.swift_version 	       = '5.0'
 end

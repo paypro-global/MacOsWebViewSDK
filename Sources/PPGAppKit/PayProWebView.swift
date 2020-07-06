@@ -8,19 +8,22 @@
 
 import Foundation
 import WebKit
+import PDFKit
 
 public enum PayProError : Error {
     case invoiceDownload(underlying:NSError?)
 }
 
 internal class PayProWebView : NSObject{
-    
+
     private let configuration:Configuration
     private var invoiceDownloadInProgress = false {
         didSet {
             refreshProgress()
         }
     }
+    
+    private var invoiceHeaders:Dictionary<String,Any>?
     
     lazy private var webView: WKWebView = {
           
@@ -33,7 +36,8 @@ internal class PayProWebView : NSObject{
             return configuration
         }()
         
-        let webView = WKWebView()
+        let defaultWebViewFrame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        let webView = WKWebView(frame: defaultWebViewFrame, configuration: configuration)
         webView.addSubview(progressView)
 
         let progressFrame:CGRect = {
@@ -58,11 +62,15 @@ internal class PayProWebView : NSObject{
         return progressView
     }()
     
+    var pdfView:PDFView?
+
     var didFail: ErrorCallback?
     
     var didStartPaymentViewLoad:(()->())?
     
     var didFinishPaymentViewLoad:(()->())?
+    
+    var didCompletedOrder:((Dictionary<String, Any>)->())?
    
     var urlCredential: ((@escaping URLCredentialCallback) -> ())?
     
@@ -93,6 +101,7 @@ internal class PayProWebView : NSObject{
 extension PayProWebView {
     static internal let javaScriptCommands = JavaScriptCommands();
     static internal let pathParameter = PathParameter();
+    static internal let payProPath = PayProPath();
 
     internal struct JavaScriptCommands {
         let print = "print"
@@ -101,17 +110,31 @@ extension PayProWebView {
     internal struct PathParameter {
         let download = "DownloadPdf=true"
     }
+
+    internal struct PayProPath{
+        let invoice = "/Invoice";
+    }
 }
 
 extension PayProWebView : WKScriptMessageHandler {
+   
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if message.name == "print" {
-            //Method to support print
-            //There is a bug in Web View https://developer.apple.com/forums/thread/78354
-            //Hence not supported
+        if message.name == "print", let validURL = webView.url{
+            let url = validURL.URLbyAppending(parameter: PayProWebView.pathParameter.download)
+            
+            download(invoice: url,didFinish: { [weak self] (path) in
+                self?.printDocument(at: path)
+           })
         }
     }
     
+    private func printDocument(at path:String){
+        let document  =  PDFDocument(url: URL(fileURLWithPath: path));
+        pdfView = PDFView()
+        pdfView?.document = document
+        webView.addSubview(pdfView!)
+        pdfView?.print(with: NSPrintInfo.shared, autoRotate: false)
+    }
 }
 
 extension PayProWebView  : WKNavigationDelegate {
@@ -162,16 +185,26 @@ extension PayProWebView  : WKNavigationDelegate {
         didFinishPaymentViewLoad?()
         refreshProgress()
     }
+    
+    private func processHeaders(for navigationAction:WKNavigationAction){
+        if let validURL = navigationAction.request.url, validURL.path.contains(PayProWebView.payProPath.invoice) , invoiceHeaders == nil {
+            invoiceHeaders = navigationAction.request.allHTTPHeaderFields
+        }
+    }
 
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         guard let validURL = navigationAction.request.url else {
             decisionHandler(.allow)
             return
         }
+             
+        processHeaders(for: navigationAction);
         
         if validURL.absoluteString.contains(PayProWebView.pathParameter.download)  {
             decisionHandler(.cancel)
-            download(invoice: validURL)
+            download(invoice: validURL,didFinish: { (path) in
+                NSWorkspace.shared.open(URL(fileURLWithPath: path))
+            })
             return
         }
         
@@ -179,7 +212,7 @@ extension PayProWebView  : WKNavigationDelegate {
 
     }
     
-    private func download(invoice:URL){
+    private func download(invoice:URL,didFinish:@escaping(String)->()){
         guard  invoiceDownloadInProgress == false else { return }
         
         invoiceDownloadInProgress = true
@@ -198,7 +231,7 @@ extension PayProWebView  : WKNavigationDelegate {
                 return
             }
             
-            NSWorkspace.shared.open(URL(fileURLWithPath: validPath))
+            didFinish(validPath)
         }
     }
 
@@ -215,5 +248,18 @@ extension PayProWebView : PayProGlobal {
     
     func reload() {
         load()
+        invoiceHeaders = nil
+    }
+}
+
+
+extension URL {
+    func URLbyAppending(parameter:String) -> URL {
+        var urlString = absoluteString
+
+        urlString.append(contentsOf: "&")
+        urlString.append(contentsOf: parameter)
+        let appendedURL = URL(string: urlString )!
+        return appendedURL
     }
 }
