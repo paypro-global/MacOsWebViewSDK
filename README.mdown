@@ -149,7 +149,7 @@ Open `PayProGlobalStore.xcworkspace` , build and run it.
     [self.container addSubview:paymentView];
 
 
-###Sandbox Settings###
+### Sandbox Settings ###
 
 If your app is sandboxed you should do following in  Signing & Capabilities tab :
 
@@ -157,4 +157,4 @@ If your app is sandboxed you should do following in  Signing & Capabilities tab 
 2. Enable **Printing** to allow the framework to print invoice.
 3. Framework supports Saving of invoice feature by providing **Read/Write access** to **User Selected File**.
 
-<img  src="git_images/sandboxsettings.png" alt="GitHub" title="num images per class" width="1000" height="603" />     
+<img  src="gitimages/sandboxsettings.png" alt="Sandbox Settings" title="Sandbox Settings" width="1000" height="603" />     
