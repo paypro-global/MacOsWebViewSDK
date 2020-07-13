@@ -94,7 +94,7 @@ $ sudo gem install cocoapods
 
 ``` 
 
-### [Swift Package Manager] (https://github.com/apple/swift-package-manager) 
+### [Swift Package Manager](https://github.com/apple/swift-package-manager) 
 
   
 
@@ -198,7 +198,7 @@ If you have used CocoaPods, Open `PayProGlobalStore.xcworkspace`, build and run.
 
   
 
-1. Read our [URL Parameters guide] (https://payproglobal.com/knowledge-base/developer-tools/url-parameters/) to learn how about URL parameters. 
+1. Read our [URL Parameters guide](https://payproglobal.com/knowledge-base/developer-tools/url-parameters/) to learn how about URL parameters. 
 
 2. Create `Configuration` object using  
 
