@@ -98,7 +98,7 @@ $ sudo gem install cocoapods
 
   
 
-To add a package dependency to your Xcode project, select File > Swift Packages > Add Package Dependency and enter its repository URL https://github.com/alex-pro-ppg/PayProGlobalStore.git 
+To add a package dependency to your Xcode project, select File > Swift Packages > Add Package Dependency and enter its repository URL https://github.com/paypro-global/MacOsWebViewSDK.git
 
   
 
