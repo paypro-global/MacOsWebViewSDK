@@ -14,25 +14,35 @@ public enum PayProError : Error {
     case invoiceDownload(underlying:NSError?)
 }
 
-internal class PayProWebView : NSObject{
-
+internal class PayProWebView : NSObject {
+    
+    private lazy var scriptMessageInterpreter:ScriptMessageInterpreter = {
+       
+        let interpreter = ScriptMessageInterpreter(orderCompleted: { [weak self] headers in
+            self?.didCompletedOrder?(headers)
+        }, initiatePrint: {[weak self](url)in
+            self?.download(invoice: url,didFinish: { [weak self] (path) in
+                 self?.printDocument(at: path)
+            })
+        })
+        
+        return interpreter
+    }()
+    
     private let configuration:Configuration
     private var invoiceDownloadInProgress = false {
         didSet {
             refreshProgress()
         }
     }
-    
-//    private var invoiceHeaders:Dictionary<String,Any>?
-    
+        
     lazy private var webView: WKWebView = {
-          
         let configuration : WKWebViewConfiguration = {
             let configuration = WKWebViewConfiguration()
-            let script = WKUserScript(source: "window.print = function() { window.webkit.messageHandlers.print.postMessage('print') }", injectionTime: WKUserScriptInjectionTime.atDocumentEnd, forMainFrameOnly: true)
-            configuration.userContentController.addUserScript(script)
-            configuration.userContentController.add(self, name: "print")
-
+            configuration.userContentController.addUserScript(UserScriptFactory.orderCompleted)
+            configuration.userContentController.add(self, name: UserScriptFactory.ScriptName.orderCompleted.rawValue)
+            configuration.userContentController.addUserScript(UserScriptFactory.print)
+            configuration.userContentController.add(self, name: UserScriptFactory.ScriptName.print.rawValue)
             return configuration
         }()
         
@@ -70,7 +80,7 @@ internal class PayProWebView : NSObject{
     
     var didFinishPaymentViewLoad:(()->())?
     
-    var didCompletedOrder:((Dictionary<String, Any>?)->())?
+    var didCompletedOrder:((Dictionary<String, Any>)->())?
    
     var urlCredential: ((@escaping URLCredentialCallback) -> ())?
     
@@ -95,38 +105,6 @@ internal class PayProWebView : NSObject{
         }
         progressView.stopAnimation(self)
     }
-
-}
-
-extension PayProWebView {
-    static internal let javaScriptCommands = JavaScriptCommands();
-    static internal let pathParameter = PathParameter();
-    static internal let payProPath = PayProPath();
-
-    internal struct JavaScriptCommands {
-        let print = "print"
-    }
-    
-    internal struct PathParameter {
-        let download = "DownloadPdf=true"
-    }
-
-    internal struct PayProPath{
-        let invoice = "/Invoice";
-    }
-}
-
-extension PayProWebView : WKScriptMessageHandler {
-   
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if message.name == "print", let validURL = webView.url{
-            let url = validURL.URLbyAppending(parameter: PayProWebView.pathParameter.download)
-            
-            download(invoice: url,didFinish: { [weak self] (path) in
-                self?.printDocument(at: path)
-           })
-        }
-    }
     
     private func printDocument(at path:String){
         let document  =  PDFDocument(url: URL(fileURLWithPath: path));
@@ -135,6 +113,29 @@ extension PayProWebView : WKScriptMessageHandler {
         webView.addSubview(pdfView!)
         pdfView?.print(with: NSPrintInfo.shared, autoRotate: false)
     }
+
+}
+
+extension PayProWebView {
+    static internal let pathParameter = PathParameter();
+    static internal let payProPath = PayProPath();
+    
+    internal struct PathParameter {
+        let download = "DownloadPdf=true"
+    }
+
+    internal struct PayProPath{
+        let invoice = "/Invoice";
+    }
+
+}
+
+extension PayProWebView : WKScriptMessageHandler {
+   
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        scriptMessageInterpreter.interpret(message: message)
+    }
+
 }
 
 extension PayProWebView  : WKNavigationDelegate {
@@ -185,21 +186,13 @@ extension PayProWebView  : WKNavigationDelegate {
         didFinishPaymentViewLoad?()
         refreshProgress()
     }
-    
-    private func processHeaders(for navigationAction:WKNavigationAction){
-        if let validURL = navigationAction.request.url, validURL.path.contains(PayProWebView.payProPath.invoice) /*, invoiceHeaders == nil*/ {
-            didCompletedOrder?(navigationAction.request.allHTTPHeaderFields)
-        }
-    }
 
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         guard let validURL = navigationAction.request.url else {
             decisionHandler(.allow)
             return
         }
-             
-        processHeaders(for: navigationAction);
-        
+                     
         if validURL.absoluteString.contains(PayProWebView.pathParameter.download)  {
             decisionHandler(.cancel)
             download(invoice: validURL,didFinish: { (path) in
@@ -248,7 +241,6 @@ extension PayProWebView : PayProGlobal {
     
     func reload() {
         load()
-//        invoiceHeaders = nil
     }
 }
 

@@ -116,9 +116,11 @@ To add a package dependency to your Xcode project, select File > Swift Packages 
 
 4. Observe  `didFail/didStartPaymentViewLoad/didFinishPaymentViewLoad` to track progress of URL Load. 
 
-5. Observe `urlCredential`  method to handle Authentication Challenge. 
+5. Observe `didCompletedOrder`, it is called on order completion. 
 
-6. Access `paymentView` object in `PayProGlobal` and add it as a sub view on any NSWindow. 
+6. Observe `urlCredential`  method to handle Authentication Challenge. 
+
+7. Access `paymentView` object in `PayProGlobal` and add it as a sub view on any NSWindow. 
 
   
 

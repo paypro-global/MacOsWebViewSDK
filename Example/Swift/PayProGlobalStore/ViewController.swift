@@ -47,8 +47,8 @@ class ViewController: NSViewController {
             print("didFinishPaymentViewLoad ")
         }
         
-        payproGlobal.didCompletedOrder = { (headers) in
-            print("\(headers)")
+        payproGlobal.didCompletedOrder = { (orderInfo) in
+            print("did complete Order \(orderInfo)")
         }
         
         payproGlobal.urlCredential = { [weak self] (crediential) in

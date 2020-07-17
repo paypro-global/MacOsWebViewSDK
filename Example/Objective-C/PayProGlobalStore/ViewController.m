@@ -33,8 +33,8 @@
         NSLog(@"Did Fail");
     };
     
-    self.payproGlobal.didCompletedOrder = ^(NSDictionary<NSString *,id> * _Nullable headers) {
-        NSLog(@"%@",headers);
+    self.payproGlobal.didCompletedOrder = ^(NSDictionary<NSString *,id> * orderInfo) {
+        NSLog(@"did Complete Order %@",orderInfo);
     };
     
     __weak ViewController *weakSelf = self;

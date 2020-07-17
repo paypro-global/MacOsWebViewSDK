@@ -22,7 +22,7 @@ public protocol PayProGlobal {
     var didFail: ErrorCallback? { get set }
     var didStartPaymentViewLoad:(()->())?{ get set}
     var didFinishPaymentViewLoad:(()->())?{ get set}
-    var didCompletedOrder:((Dictionary<String, Any>?)->())? { get set }
+    var didCompletedOrder:((Dictionary<String, Any>)->())? { get set }
     var urlCredential:((@escaping URLCredentialCallback)->())? { get set}
 }
 
