@@ -108,7 +108,7 @@ To add a package dependency to your Xcode project, select File > Swift Packages 
 
   
 
-1. Read our [URL Parameters guide] (https://payproglobal.com/knowledge-base/developer-tools/url-parameters/) to learn how about URL parameters. 
+1. Read our [URL Parameters guide](https://payproglobal.com/knowledge-base/developer-tools/url-parameters/) to learn how about URL parameters. 
 
 2. Create `Configuration` object using the URL parameters explained in Step 1. 
 
