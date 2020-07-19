@@ -44,8 +44,6 @@ The `PayProWebView` provides functionality to load the e-commerce solution of Pa
 
 ## Installation ## 
 
-[TODO : Make the Repo public and push it to cocoapods] 
-
   
 
 ### [CocoaPods](https://guides.cocoapods.org/using/using-cocoapods.html) 
